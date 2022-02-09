@@ -1,5 +1,5 @@
 // node modules
-import Link from 'next/Link';
+import Link from 'next/link';
 
 // local files
 import { Post } from '../../typings';
