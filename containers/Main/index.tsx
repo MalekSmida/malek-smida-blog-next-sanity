@@ -1,5 +1,6 @@
 // node modules
 import React from 'react';
+import Head from 'next/head';
 
 // local files
 import { Header } from '../../components';
@@ -10,8 +11,12 @@ interface Props {
 
 function index({ children }: Props) {
   return (
-    <>
-      <main className="mx-auto flex max-w-6xl flex-col items-center">
+    <div className="flex min-h-screen flex-col items-center justify-between">
+      <Head>
+        <title>Malek Smida | Blog</title>
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+      <main className=" mx-auto flex w-full max-w-6xl flex-col items-center">
         <Header />
         {children}
       </main>
@@ -20,7 +25,7 @@ function index({ children }: Props) {
           ©Copyright <span className="mx-2 font-bold"> Malek Smida</span>
         </h4>
       </footer>
-    </>
+    </div>
   );
 }
 

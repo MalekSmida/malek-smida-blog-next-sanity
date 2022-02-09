@@ -43,7 +43,7 @@ function Post({ post }: Props) {
         setSubmitted(true);
         setLoading(false);
       })
-      .catch((err) => {
+      .catch(() => {
         setSubmitted(false);
         setLoading(false);
       });
@@ -57,20 +57,20 @@ function Post({ post }: Props) {
         className="h-48 w-full object-cover"
       />
       <article className="mx-auto max-w-3xl p-5">
-        <h1 className="mt-5 mb-3 text-3xl font-semibold">{post.title}</h1>
-        <h2 className="mb-2 text-xl font-light text-gray-500">
-          {post.description}
-        </h2>
-        <div className="flex items-center">
+        <h1 className="mb-2 mt-5 text-3xl font-semibold">{post.title}</h1>
+        <h2 className="text-xl font-light text-gray-500">{post.description}</h2>
+        <div className="mt-5 flex items-center">
           <img
             className="mr-2 h-10 w-10 rounded-full"
             src={urlFor(post.author.image).url()!}
             alt={post.author.name}
           />
-          <p className="text-sm font-extralight text-gray-500">
-            By <span className="text-primary-color">{post.author.name}</span> at{' '}
-            {new Date(post._createdAt).toLocaleString()}
-          </p>
+          <div className="flex flex-col">
+            <p className="text-sm text-primary-color">{post.author.name}</p>
+            <p className="text-sm font-extralight text-gray-500">
+              {new Date(post._createdAt).toLocaleString()}
+            </p>
+          </div>
         </div>
         <div className="my-10">
           <PortableText
@@ -118,7 +118,6 @@ function Post({ post }: Props) {
           onSubmit={handleSubmit(onSubmit)}
           className="mx-auto mb-10 flex w-full max-w-2xl flex-col p-5"
         >
-          <h3 className="text-sm text-gray-500">Enjoyed this article ?</h3>
           <h4 className="text-3xl font-bold">Leave a comment bellow</h4>
           <hr className="mt-2 py-4" />
 
@@ -147,7 +146,7 @@ function Post({ post }: Props) {
               type="email"
             />
           </label>
-          <label className="mb-5 block">
+          <label className="block">
             <span className="text-gray-700">Comment</span>
             <textarea
               {...register('comment', { required: true })}
@@ -185,7 +184,7 @@ function Post({ post }: Props) {
       )}
 
       {/* Comments section */}
-      <div className="my-10 mx-auto flex w-full max-w-2xl flex-col space-y-2 p-10 shadow shadow-primary-color">
+      <div className="mx-auto mb-10 flex w-full max-w-2xl flex-col space-y-2 p-10 shadow shadow-primary-color">
         <h3 className="text-4xl">Comments</h3>
         <hr className="pb-2" />
         {post.comments?.map((comment) => (
@@ -261,6 +260,6 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     },
     // after 3600s * 24 (1day), nextjs gonna update the old cache version
     // you can put 60s if you need update the SSR rendered version every 1min
-    revalidate: 3600 * 24,
+    revalidate: 60,
   };
 };
