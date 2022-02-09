@@ -19,6 +19,7 @@ export default async function handler(
   const { _id, name, email, comment } = JSON.parse(req.body);
 
   try {
+    // create comment sanity service
     await client.create({
       _type: 'comment',
       post: {
