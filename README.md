@@ -1,27 +1,45 @@
-# Next.js + Tailwind CSS Example
+# My blog
 
-This example shows how to use [Tailwind CSS](https://tailwindcss.com/) [(v3.0)](https://tailwindcss.com/blog/tailwindcss-v3) with Next.js. It follows the steps outlined in the official [Tailwind docs](https://tailwindcss.com/docs/guides/nextjs).
+This example shows how to use Next.js (v12), Incremental Static Regeneration (ISR), [Tailwind CSS](https://tailwindcss.com/) [(v3.0)](https://tailwindcss.com/blog/tailwindcss-v3), TypeScript and Sanity CMS (GROQ query language)
 
 ## Preview
 
-Preview the example live on [StackBlitz](http://stackblitz.com/):
+Preview live on [Wanderer Bolg](https://wanderer-blog.vercel.app/):
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/vercel/next.js/tree/canary/examples/with-tailwindcss)
-
-## Deploy your own
-
-Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=next-example):
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/vercel/next.js/tree/canary/examples/with-tailwindcss&project-name=with-tailwindcss&repository-name=with-tailwindcss)
+[<img src="https://res.cloudinary.com/deebb8zh7/image/upload/v1644522760/wanderer-blog_ccpshs.png">](https://wanderer-blog.vercel.app/)
 
 ## How to use
 
-Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init) or [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/) to bootstrap the example:
+1- Download or clone the project <br />
+2- Run `$ npm install` to add the dependencies <br />
+3- Run the project locally `$ npm run dev` <br />
+
+In order to use Sanity CMS follow this steps:
+
+1- Create project in [Sanity](https://www.sanity.io/)
+2- Create `.env.local` and add this variables
 
 ```bash
-npx create-next-app --example with-tailwindcss with-tailwindcss-app
-# or
-yarn create next-app --example with-tailwindcss with-tailwindcss-app
+NEXT_PUBLIC_SANITY_DATASET=
+NEXT_PUBLIC_SANITY_PROJECT_ID=
+SANITY_API_TOKEN=
 ```
 
+3- open sanityblog folder <br />
+
+```bash
+$ cd sanityblog
+```
+
+4- Run `$ npm install` to add the dependencies <br />
+5- Run Sanity dashboard locally `$ sanity start` <br />
+
+## How to use
+
+### Next.js App
+
 Deploy it to the cloud with [Vercel](https://vercel.com/new?utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).
+
+### Sanity project
+
+Under the folder `\sanityblog` run the command `$ sanity deploy`
