@@ -9,15 +9,11 @@ function index() {
           Blog
         </h1>
       </Link>
-      <a
-        target="_blank"
-        href="https://malek-smida.netlify.app/"
-        rel="noopener noreferrer"
-      >
+      <Link href="/about">
         <h1 className="cursor-pointer font-semibold transition-colors duration-200 ease-in-out hover:text-primary-color">
-          Who am I ?
+          About
         </h1>
-      </a>
+      </Link>
     </header>
   );
 }
