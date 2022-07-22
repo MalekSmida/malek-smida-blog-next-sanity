@@ -14,10 +14,14 @@ function index({ children, withHeaderImg }: Props) {
   return (
     <div className="flex min-h-screen flex-col items-center justify-between">
       <Head>
-        <title>Malek Smida | Blog</title>
+        <title>Malek Smida | Wanderer Blog</title>
+        <meta
+          name="description"
+          content="Wanderer blog is about: parable and short stories of wisdom, book summary and quotes, spirituality, ancient philosophy, and social psychology"
+        />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className=" mx-auto flex w-full max-w-6xl flex-col items-center">
+      <main className="mx-auto flex w-full max-w-6xl flex-col items-center">
         <Header />
         {withHeaderImg && (
           <div className="flex w-full items-center justify-between bg-dark-color py-5 px-6 md:px-20">
@@ -40,9 +44,9 @@ function index({ children, withHeaderImg }: Props) {
         {children}
       </main>
       <footer className="flex h-24 w-full items-center justify-center border-t">
-        <h4 className="flex items-center justify-center">
+        <p className="flex items-center justify-center">
           ©Copyright <span className="mx-2 font-bold"> Malek Smida</span>
-        </h4>
+        </p>
       </footer>
     </div>
   );

@@ -15,7 +15,7 @@ function index() {
           <p className="text-md mb-1 text-gray-500">Founder</p>
           <a
             target="_blank"
-            href="https://malek-smida.netlify.app/"
+            href="https://www.maleksmida.com"
             rel="noopener noreferrer"
             className="cursor-pointer text-sm text-primary-color underline transition-colors duration-200 ease-in-out"
           >
