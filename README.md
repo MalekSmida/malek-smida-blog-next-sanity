@@ -6,7 +6,7 @@ This example shows how to use [Next.js](https://nextjs.org/) [(v12)](https://nex
 
 Preview live on [Wanderer Bolg](https://wanderer-blog.vercel.app/):
 
-[<img src="https://res.cloudinary.com/deebb8zh7/image/upload/v1644522760/wanderer-blog_ccpshs.png">](https://wanderer-blog.vercel.app/)
+![image](https://user-images.githubusercontent.com/58492485/185740638-32885d95-d167-44a0-b772-45dc343e5c46.png)
 
 ## How to use
 
