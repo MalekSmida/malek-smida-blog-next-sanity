@@ -7,7 +7,7 @@ function index() {
       <div className="flex items-center justify-between bg-white p-5">
         <img
           className="mr-3 w-44 rounded-md border-4 object-contain"
-          src="https://res.cloudinary.com/deebb8zh7/image/upload/v1645031322/MalekSmida_npeq7d.jpg"
+          src="https://res.cloudinary.com/deebb8zh7/image/upload/v1664017465/Malek_Smida_thumbnail_usjhwc.jpg"
           alt="Malek Smida"
         />
         <div>
