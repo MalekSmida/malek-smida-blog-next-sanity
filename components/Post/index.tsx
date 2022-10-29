@@ -24,7 +24,10 @@ function index({ post }: Props) {
               {post.title}
             </p>
             <p className="text-xs text-dark-color">
-              {post.description} by {post.author.name}
+              <span className="mr-1 rounded-md bg-blue-50 py-0.5 px-1.5 text-primary-color">
+                {post.description}
+              </span>
+              by {post.author.name}
             </p>
           </div>
           <img
