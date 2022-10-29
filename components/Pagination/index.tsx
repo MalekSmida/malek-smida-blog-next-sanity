@@ -5,7 +5,7 @@
 function index() {
   return (
     <div className="mb-6 inline-flex items-center justify-center gap-3">
-      <a className="inline-flex h-8 w-8 cursor-not-allowed items-center justify-center rounded border border-gray-100">
+      <div className="inline-flex h-8 w-8 cursor-not-allowed items-center justify-center rounded border border-gray-100">
         <span className="sr-only">Next Page</span>
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -19,13 +19,13 @@ function index() {
             clipRule="evenodd"
           />
         </svg>
-      </a>
+      </div>
 
       <p className="text-xs">
         1<span className="mx-0.25">/</span>1
       </p>
 
-      <a className="inline-flex h-8 w-8 cursor-not-allowed items-center justify-center rounded border border-gray-100">
+      <div className="inline-flex h-8 w-8 cursor-not-allowed items-center justify-center rounded border border-gray-100">
         <span className="sr-only">Next Page</span>
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -39,7 +39,7 @@ function index() {
             clipRule="evenodd"
           />
         </svg>
-      </a>
+      </div>
     </div>
   );
 }
