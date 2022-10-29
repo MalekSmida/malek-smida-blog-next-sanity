@@ -5,11 +5,11 @@ import Link from 'next/link';
 import { Post } from '../../typings';
 import { urlFor } from '../../services/sanity';
 
-interface Props {
+interface PropsPost {
   post: Post;
 }
 
-function index({ post }: Props) {
+function index({ post }: PropsPost) {
   return (
     <Link href={`/post/${post.slug.current}`}>
       <div className="group cursor-pointer overflow-hidden rounded-lg border">
