@@ -1,19 +1,24 @@
 // node modules
 import Link from 'next/link';
 
+interface PropsLinkButton {
+  title: string;
+  pageLink: string;
+}
+
 function index() {
+  const LinkButton = ({ title, pageLink }: PropsLinkButton) => (
+    <Link href={pageLink}>
+      <h1 className="relative cursor-pointer text-lg font-medium transition-colors duration-300 ease-in-out before:absolute before:-bottom-1 before:h-0.5 before:w-full before:origin-left before:scale-x-0 before:bg-primary-color before:transition hover:text-primary-color hover:before:scale-100">
+        {title}
+      </h1>
+    </Link>
+  );
+
   return (
     <header className="flex w-full items-center justify-between p-4 text-lightdark-color">
-      <Link href="/">
-        <h1 className="cursor-pointer text-2xl font-bold transition-colors duration-200 ease-in-out hover:text-primary-color">
-          Home
-        </h1>
-      </Link>
-      <Link href="/about">
-        <h1 className="cursor-pointer font-bold transition-colors duration-200 ease-in-out hover:text-primary-color">
-          About
-        </h1>
-      </Link>
+      <LinkButton title="Home" pageLink="/" />
+      <LinkButton title="About" pageLink="/about" />
     </header>
   );
 }
