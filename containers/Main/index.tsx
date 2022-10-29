@@ -24,7 +24,7 @@ function index({ children, withHeaderImg }: Props) {
       <main className="mx-auto flex w-full max-w-6xl flex-col items-center">
         <Header />
         {withHeaderImg && (
-          <div className="flex w-full items-center justify-between bg-dark-color py-5 px-6 md:px-20">
+          <div className="flex w-full items-center justify-between bg-gradient-to-br from-dark-color to-lightdark-color py-5 px-6 md:px-20">
             <div className="space-y-5">
               <h1 className="font-serif text-6xl font-semibold text-white">
                 Wanderer
