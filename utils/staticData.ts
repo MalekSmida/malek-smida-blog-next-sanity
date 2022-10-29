@@ -1,4 +1,4 @@
-import { AboutBlog } from '../../typings';
+import { AboutBlog } from '../typings';
 
 const aboutList: AboutBlog[] = [
   {

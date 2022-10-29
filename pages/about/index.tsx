@@ -1,6 +1,6 @@
 // local files
 import { Main } from '../../containers';
-import { aboutList } from './data';
+import { aboutList } from '../../utils/staticData';
 
 function index() {
   return (
