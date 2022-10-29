@@ -4,9 +4,9 @@ This example shows how to use [Next.js](https://nextjs.org/) [(v12)](https://nex
 
 ## Preview
 
-Preview live on [Wanderer Bolg](https://wanderer-blog.vercel.app/):
+Preview live on [Wanderer Bolg](https://www.maleksmida.blog/):
 
-![image](https://user-images.githubusercontent.com/58492485/185740638-32885d95-d167-44a0-b772-45dc343e5c46.png)
+[![image](https://user-images.githubusercontent.com/58492485/185740638-32885d95-d167-44a0-b772-45dc343e5c46.png)](https://www.maleksmida.blog/)
 
 ## How to use
 
