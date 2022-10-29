@@ -3,14 +3,19 @@ import React from 'react';
 import Head from 'next/head';
 
 // local files
-import { Header } from '../../components';
+import { Header, BackToTopButton } from '../../components';
+import useShowBackToTop from '../../hooks/useShowBackToTop';
 
+// typing
 interface Props {
   withHeaderImg?: boolean;
   children?: React.ReactNode;
 }
 
 function index({ children, withHeaderImg }: Props) {
+  // hooks
+  const { showArrowButton } = useShowBackToTop();
+
   return (
     <div className="flex min-h-screen flex-col items-center justify-between">
       <Head>
@@ -48,6 +53,7 @@ function index({ children, withHeaderImg }: Props) {
           ©Copyright <span className="mx-2 font-bold"> Malek Smida</span>
         </p>
       </footer>
+      {showArrowButton && <BackToTopButton />}
     </div>
   );
 }
