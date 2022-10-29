@@ -36,3 +36,8 @@ export interface Comment {
     _type: string;
   };
 }
+export interface AboutBlog {
+  _id: string;
+  title: string;
+  description?: string;
+}
