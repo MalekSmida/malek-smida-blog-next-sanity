@@ -11,10 +11,6 @@ const navList: Array<NavButtonProps> = [
     title: 'About',
     pageLink: '/about',
   },
-  {
-    _id: '3',
-    title: 'Portfolio',
-  },
 ];
 
 export default navList;
