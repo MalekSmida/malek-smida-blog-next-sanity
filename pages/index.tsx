@@ -11,7 +11,7 @@ interface PropsHome {
 
 export default function Home({ posts }: PropsHome) {
   return (
-    <Main withHeaderImg>
+    <Main>
       {/* posts */}
       <div className="grid grid-cols-1 gap-3 p-6 sm:grid-cols-2 md:gap-6 lg:grid-cols-3">
         {posts.map((post) => (

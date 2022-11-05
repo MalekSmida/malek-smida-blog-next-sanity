@@ -4,7 +4,7 @@ import aboutList from '../../utils/aboutBlogList';
 
 function index() {
   return (
-    <Main withHeaderImg>
+    <Main>
       <div className="mx-auto flex w-full max-w-3xl items-center p-5">
         <img
           className="mr-3 w-44 rounded-md border-4 object-contain"

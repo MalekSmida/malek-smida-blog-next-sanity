@@ -8,11 +8,11 @@ import useShowBackToTop from '../../hooks/useShowBackToTop';
 
 // typing
 interface PropsMain {
-  withHeaderImg?: boolean;
+  hideBanner?: boolean;
   children?: React.ReactNode;
 }
 
-function index({ children, withHeaderImg }: PropsMain) {
+function index({ children, hideBanner }: PropsMain) {
   // hooks
   const { showArrowButton } = useShowBackToTop();
 
@@ -28,7 +28,7 @@ function index({ children, withHeaderImg }: PropsMain) {
       </Head>
       <main className="mx-auto flex w-full max-w-6xl flex-col items-center">
         <NavHeader />
-        {withHeaderImg && <Banner />}
+        {!hideBanner && <Banner />}
         {children}
       </main>
       <Footer />
