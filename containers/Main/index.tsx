@@ -3,16 +3,16 @@ import React from 'react';
 import Head from 'next/head';
 
 // local files
-import { NavHeader, BackToTopButton } from '../../components';
+import { NavHeader, BackToTopButton, Footer } from '../../components';
 import useShowBackToTop from '../../hooks/useShowBackToTop';
 
 // typing
-interface Props {
+interface PropsMain {
   withHeaderImg?: boolean;
   children?: React.ReactNode;
 }
 
-function index({ children, withHeaderImg }: Props) {
+function index({ children, withHeaderImg }: PropsMain) {
   // hooks
   const { showArrowButton } = useShowBackToTop();
 
@@ -48,11 +48,7 @@ function index({ children, withHeaderImg }: Props) {
         )}
         {children}
       </main>
-      <footer className="flex h-20 w-full items-center justify-center border-t">
-        <p className="flex items-center justify-center text-sm font-medium text-gray-700">
-          ©Copyright <span className="mx-2 font-bold"> Malek Smida</span>
-        </p>
-      </footer>
+      <Footer />
       {showArrowButton && <BackToTopButton />}
     </div>
   );
