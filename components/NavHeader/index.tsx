@@ -47,28 +47,24 @@ function NavHeader() {
   return (
     <header
       id="header"
-      className="mx-auto flex h-16 max-w-screen-xl items-center justify-between bg-white px-4 sm:px-6 lg:px-8"
+      className="mx-auto hidden h-16 max-w-screen-xl items-center justify-between bg-white px-4 sm:px-6 md:flex lg:px-8"
     >
-      <div className="flex-1"></div>
-      <div className="hidden flex-1 md:block">
-        <nav aria-labelledby="header-navigation">
-          <h2 className="sr-only" id="header-navigation">
-            Header navigation
-          </h2>
+      <nav aria-labelledby="header-navigation">
+        <h2 className="sr-only" id="header-navigation">
+          Header navigation
+        </h2>
 
-          <ul className="flex items-center gap-10 text-sm">
-            {navList.map((item) => (
-              <NavButton
-                _id={item._id}
-                key={item._id}
-                title={item.title}
-                pageLink={item.pageLink}
-              />
-            ))}
-          </ul>
-        </nav>
-      </div>
-      <div className="flex-1"></div>
+        <ul className="flex items-center gap-10 text-sm">
+          {navList.map((item) => (
+            <NavButton
+              _id={item._id}
+              key={item._id}
+              title={item.title}
+              pageLink={item.pageLink}
+            />
+          ))}
+        </ul>
+      </nav>
     </header>
   );
 }
