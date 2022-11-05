@@ -17,7 +17,7 @@ export interface Post {
   slug: {
     current: string;
   };
-  body: Object[];
+  body: any; // Object[] created type problem with @portabletext/react
 }
 
 export interface Comment {
