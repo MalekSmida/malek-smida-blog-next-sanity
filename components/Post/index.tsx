@@ -30,11 +30,11 @@ function index({ post }: PropsPost) {
               by {post.author.name}
             </p>
           </div>
-          <img
+          {/* <img
             className="ml-3 h-12 w-12 rounded-full"
             src={urlFor(post.author.image).url()!}
             alt={post.author.name}
-          />
+          /> */}
         </div>
       </div>
     </Link>

@@ -53,16 +53,20 @@ function NavHeader() {
               pageLink={item.pageLink}
             />
           ))}
-          <a
-            href={hyperlinks.Portfolio}
-            target="_blank"
-            rel="noopener noreferrer"
-            title="Wanderer blog"
-          >
-            <span className="relative cursor-pointer select-none text-sm font-medium text-gray-500 transition-colors duration-300 ease-in-out before:absolute before:-bottom-1 before:h-0.5 before:w-full before:origin-left before:scale-x-0 before:bg-primary-color before:transition hover:text-primary-color hover:before:scale-100">
-              Portfolio
-            </span>
-          </a>
+
+          {/* Portfolio link */}
+          <li>
+            <a
+              href={hyperlinks.Portfolio}
+              target="_blank"
+              rel="noopener noreferrer"
+              title="Wanderer blog"
+            >
+              <span className="relative cursor-pointer select-none text-sm font-medium text-gray-500 transition-colors duration-300 ease-in-out before:absolute before:-bottom-1 before:h-0.5 before:w-full before:origin-left before:scale-x-0 before:bg-primary-color before:transition hover:text-primary-color hover:before:scale-100">
+                Portfolio
+              </span>
+            </a>
+          </li>
         </ul>
       </nav>
     </header>

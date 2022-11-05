@@ -29,8 +29,6 @@ function index({ post }: PropsComment) {
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
 
-  console.log(errors);
-
   // handle form submit to create new comment
   const onSubmit: SubmitHandler<IFormInput> = (data) => {
     setLoading(true);
