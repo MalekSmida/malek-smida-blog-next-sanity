@@ -2,7 +2,7 @@
 import { useState } from 'react';
 
 // local files
-import { Pagination, Post as PostComponent, SearchBar } from '../components';
+import { Post as PostComponent, SearchBar } from '../components';
 import { Main } from '../containers';
 import { sanityClient } from '../services/sanity';
 import { Post } from '../typings';
@@ -33,7 +33,6 @@ export default function Home({ posts }: PropsHome) {
           <PostComponent post={post} key={post._id} />
         ))}
       </div>
-      <Pagination />
     </Main>
   );
 }
