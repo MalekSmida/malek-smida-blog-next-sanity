@@ -7,6 +7,7 @@ import { Main } from '../../containers';
 import { sanityClient, urlFor } from '../../services/sanity';
 import { Post } from '../../typings';
 import { CommentForm, CommentList } from '../../components';
+import hyperlinks from '../../utils/hyperlinks';
 
 // typing
 interface PropsPost {
@@ -24,15 +25,22 @@ function Post({ post }: PropsPost) {
       <article className="mx-auto max-w-3xl p-5">
         <h1 className="mb-2 mt-5 text-3xl font-semibold">{post.title}</h1>
         <h2 className="text-xl font-light text-gray-500">{post.description}</h2>
-        <div className="mt-5 flex items-center">
+        <div className="mt-7 flex items-center">
           <img
             className="mr-2 h-10 w-10 rounded-full"
             src={urlFor(post.author.image).url()!}
             alt={post.author.name}
           />
           <div className="flex flex-col">
-            <p className="text-sm text-primary-color">{post.author.name}</p>
-            <p className="text-sm font-extralight text-gray-500">
+            <a
+              target="_blank"
+              href={hyperlinks.LinkedIn}
+              rel="noopener noreferrer"
+              className="cursor-pointer text-sm text-primary-color underline"
+            >
+              {post.author.name}
+            </a>
+            <p className="text-sm text-gray-400">
               {new Date(post._createdAt).toLocaleString()}
             </p>
           </div>

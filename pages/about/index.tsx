@@ -1,6 +1,7 @@
 // local files
 import { Main } from '../../containers';
 import aboutList from '../../utils/aboutBlogList';
+import hyperlinks from '../../utils/hyperlinks';
 
 function index() {
   return (
@@ -16,7 +17,7 @@ function index() {
           <p className="text-md mb-1 text-gray-500">Founder</p>
           <a
             target="_blank"
-            href="https://www.maleksmida.com"
+            href={hyperlinks.Portfolio}
             rel="noopener noreferrer"
             className="cursor-pointer text-sm text-primary-color underline transition-colors duration-200 ease-in-out"
           >
