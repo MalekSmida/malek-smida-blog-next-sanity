@@ -3,7 +3,7 @@ import React from 'react';
 import Head from 'next/head';
 
 // local files
-import { Header, BackToTopButton } from '../../components';
+import { NavHeader, BackToTopButton } from '../../components';
 import useShowBackToTop from '../../hooks/useShowBackToTop';
 
 // typing
@@ -27,7 +27,7 @@ function index({ children, withHeaderImg }: Props) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className="mx-auto flex w-full max-w-6xl flex-col items-center">
-        <Header />
+        <NavHeader />
         {withHeaderImg && (
           <div className="flex w-full items-center justify-between bg-gradient-to-br from-dark-color to-lightdark-color py-5 px-6 md:px-20">
             <div className="space-y-5">
@@ -48,8 +48,8 @@ function index({ children, withHeaderImg }: Props) {
         )}
         {children}
       </main>
-      <footer className="flex h-24 w-full items-center justify-center border-t">
-        <p className="flex items-center justify-center">
+      <footer className="flex h-20 w-full items-center justify-center border-t">
+        <p className="flex items-center justify-center text-sm font-medium text-gray-700">
           ©Copyright <span className="mx-2 font-bold"> Malek Smida</span>
         </p>
       </footer>

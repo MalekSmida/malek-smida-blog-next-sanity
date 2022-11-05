@@ -28,4 +28,4 @@ const aboutList: AboutBlog[] = [
   },
 ];
 
-export { aboutList };
+export default aboutList;
