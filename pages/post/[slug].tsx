@@ -15,7 +15,7 @@ interface PropsPost {
 
 function Post({ post }: PropsPost) {
   return (
-    <Main>
+    <Main hideBanner>
       <img
         src={urlFor(post.mainImage).url()!}
         alt={post.title}

@@ -3,16 +3,16 @@ import React from 'react';
 import Head from 'next/head';
 
 // local files
-import { Header, BackToTopButton } from '../../components';
+import { NavHeader, BackToTopButton, Footer, Banner } from '../../components';
 import useShowBackToTop from '../../hooks/useShowBackToTop';
 
 // typing
-interface Props {
-  withHeaderImg?: boolean;
+interface PropsMain {
+  hideBanner?: boolean;
   children?: React.ReactNode;
 }
 
-function index({ children, withHeaderImg }: Props) {
+function index({ children, hideBanner }: PropsMain) {
   // hooks
   const { showArrowButton } = useShowBackToTop();
 
@@ -27,32 +27,11 @@ function index({ children, withHeaderImg }: Props) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className="mx-auto flex w-full max-w-6xl flex-col items-center">
-        <Header />
-        {withHeaderImg && (
-          <div className="flex w-full items-center justify-between bg-gradient-to-br from-dark-color to-lightdark-color py-5 px-6 md:px-20">
-            <div className="space-y-5">
-              <h1 className="font-serif text-6xl font-semibold text-white">
-                Wanderer
-              </h1>
-              <h1 className="text-2xl text-white md:w-3/4">
-                How sad if we pass through life and never see it with the eyes
-                of a child -Anthony De Mello
-              </h1>
-            </div>
-            <img
-              src="/moment-to-relax.svg"
-              alt="relax Logo"
-              className="ml-2 hidden h-52 md:inline-flex"
-            />
-          </div>
-        )}
+        <NavHeader />
+        {!hideBanner && <Banner />}
         {children}
       </main>
-      <footer className="flex h-24 w-full items-center justify-center border-t">
-        <p className="flex items-center justify-center">
-          ©Copyright <span className="mx-2 font-bold"> Malek Smida</span>
-        </p>
-      </footer>
+      <Footer />
       {showArrowButton && <BackToTopButton />}
     </div>
   );
