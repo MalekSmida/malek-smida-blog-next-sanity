@@ -10,7 +10,7 @@ import navList from '../../utils/navList';
 export interface NavButtonProps {
   _id: string;
   title: string;
-  pageLink?: string;
+  pageLink: string;
 }
 
 function NavHeader() {
@@ -18,31 +18,21 @@ function NavHeader() {
   const currentRoute = useRouter();
 
   // components
-  const NavButton: FC<NavButtonProps> = ({ title, pageLink }) =>
-    pageLink ? (
-      <Link href={pageLink} passHref>
+  const NavButton: FC<NavButtonProps> = ({ title, pageLink }) => (
+    <li>
+      <Link href={pageLink}>
         {currentRoute.pathname === pageLink ? (
-          <h1 className="relative cursor-pointer select-none text-sm font-medium text-primary-color before:absolute before:-bottom-1 before:h-0.5 before:w-full before:bg-primary-color">
+          <span className="relative cursor-pointer select-none text-sm font-medium text-primary-color before:absolute before:-bottom-1 before:h-0.5 before:w-full before:bg-primary-color">
             {title}
-          </h1>
+          </span>
         ) : (
-          <h1 className="relative cursor-pointer select-none text-sm font-medium text-gray-500 transition-colors duration-300 ease-in-out before:absolute before:-bottom-1 before:h-0.5 before:w-full before:origin-left before:scale-x-0 before:bg-primary-color before:transition hover:text-primary-color hover:before:scale-100">
+          <span className="relative cursor-pointer select-none text-sm font-medium text-gray-500 transition-colors duration-300 ease-in-out before:absolute before:-bottom-1 before:h-0.5 before:w-full before:origin-left before:scale-x-0 before:bg-primary-color before:transition hover:text-primary-color hover:before:scale-100">
             {title}
-          </h1>
+          </span>
         )}
       </Link>
-    ) : (
-      <a
-        href={hyperlinks.Portfolio}
-        target="_blank"
-        rel="noopener noreferrer"
-        title="Wanderer blog"
-      >
-        <h1 className="relative cursor-pointer select-none text-sm font-medium text-gray-500 transition-colors duration-300 ease-in-out before:absolute before:-bottom-1 before:h-0.5 before:w-full before:origin-left before:scale-x-0 before:bg-primary-color before:transition hover:text-primary-color hover:before:scale-100">
-          {title}
-        </h1>
-      </a>
-    );
+    </li>
+  );
 
   return (
     <header
@@ -63,6 +53,16 @@ function NavHeader() {
               pageLink={item.pageLink}
             />
           ))}
+          <a
+            href={hyperlinks.Portfolio}
+            target="_blank"
+            rel="noopener noreferrer"
+            title="Wanderer blog"
+          >
+            <span className="relative cursor-pointer select-none text-sm font-medium text-gray-500 transition-colors duration-300 ease-in-out before:absolute before:-bottom-1 before:h-0.5 before:w-full before:origin-left before:scale-x-0 before:bg-primary-color before:transition hover:text-primary-color hover:before:scale-100">
+              Portfolio
+            </span>
+          </a>
         </ul>
       </nav>
     </header>
