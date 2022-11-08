@@ -12,7 +12,10 @@ interface PropsPost {
 function index({ post }: PropsPost) {
   return (
     <Link href={`/post/${post.slug.current}`}>
-      <div className="group cursor-pointer overflow-hidden rounded-lg border">
+      <div
+        className="group cursor-pointer overflow-hidden rounded-lg border"
+        data-test-id="post-card-container"
+      >
         <img
           className="h-48 w-full object-cover transition-transform duration-200 ease-in-out group-hover:scale-105"
           src={urlFor(post.mainImage).url()!}

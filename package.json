@@ -6,8 +6,7 @@
     "start": "next start",
     "cypress:open": "cypress open",
     "cypress:open:mobile": "cypress open --config viewportWidth=414,viewportHeight=896",
-    "e2e": "cypress run --config viewportWidth=1080,viewportHeight=1920",
-    "e2e:mobile": "cypress run --config viewportWidth=414,viewportHeight=896"
+    "e2e": "cypress run --config viewportWidth=1080,viewportHeight=1920"
   },
   "dependencies": {
     "@hookform/resolvers": "^2.9.10",
