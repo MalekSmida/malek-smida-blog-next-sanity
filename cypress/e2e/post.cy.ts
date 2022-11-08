@@ -3,11 +3,5 @@ describe('Post page', () => {
     cy.visit('/');
   });
 
-  it('Should render Post page', () => {
-    // ...
-  });
-
-  context('Commenting on a post', () => {
-    // ...
-  });
+  it('Coming soon', () => {});
 });
