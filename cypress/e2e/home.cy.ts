@@ -1,3 +1,5 @@
+import hyperlinks from '../../utils/hyperlinks';
+
 /**
  * Test and assert that selected element is in the DOM and Visible
  * @param selector A selector used to filter matching DOM elements
@@ -42,6 +44,14 @@ describe('Home page', () => {
         .should('have.length.greaterThan', 0)
         .first()
         .should('be.visible');
+    });
+    it.only('Should show Footer', () => {
+      // scroll to footer
+      cy.get('#footer')
+        .scrollIntoView()
+        .should('be.visible')
+        .find('a')
+        .should('have.attr', 'href', hyperlinks.GithubRepo);
     });
   });
 
