@@ -7,8 +7,4 @@ const commentSchema = object({
   comment: string().max(5000).required(),
 });
 
-const searchSchema = object({
-  searchText: string().max(200),
-});
-
-export { commentSchema, searchSchema };
+export { commentSchema };

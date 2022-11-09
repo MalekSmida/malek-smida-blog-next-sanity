@@ -1,6 +1,6 @@
 // local files
 import { Main } from '../../containers';
-import aboutList from '../../utils/aboutBlogList';
+import aboutList from '../../models/aboutBlogList';
 import hyperlinks from '../../utils/hyperlinks';
 
 function index() {
