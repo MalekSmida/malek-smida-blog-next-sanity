@@ -45,7 +45,7 @@ describe('Home page', () => {
         .first()
         .should('be.visible');
     });
-    it.only('Should show Footer', () => {
+    it('Should show Footer', () => {
       // scroll to footer
       cy.get('#footer')
         .scrollIntoView()
