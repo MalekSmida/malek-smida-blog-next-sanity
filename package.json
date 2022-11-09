@@ -3,7 +3,10 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "cypress:open": "cypress open",
+    "cypress:open:mobile": "cypress open --config viewportWidth=414,viewportHeight=896",
+    "e2e": "cypress run --config viewportWidth=1080,viewportHeight=1920"
   },
   "dependencies": {
     "@hookform/resolvers": "^2.9.10",
@@ -20,6 +23,7 @@
     "@types/node": "17.0.4",
     "@types/react": "17.0.38",
     "autoprefixer": "^10.4.0",
+    "cypress": "^10.11.0",
     "postcss": "^8.4.5",
     "prettier": "^2.5.1",
     "prettier-plugin-tailwindcss": "^0.1.1",

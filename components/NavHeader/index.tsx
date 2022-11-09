@@ -5,7 +5,7 @@ import { useRouter } from 'next/router';
 
 // local files
 import hyperlinks from '../../utils/hyperlinks';
-import navList from '../../utils/navList';
+import navList from '../../data/navList';
 
 export interface NavButtonProps {
   _id: string;

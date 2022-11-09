@@ -3,7 +3,10 @@ import hyperlinks from '../../utils/hyperlinks';
 
 function index() {
   return (
-    <footer className="flex h-20 w-full items-center justify-center border-t">
+    <footer
+      className="flex h-20 w-full items-center justify-center border-t"
+      id="footer"
+    >
       <p className="flex items-center justify-center text-sm font-medium text-gray-700">
         ©Copyright <span className="ml-2 font-bold"> Malek Smida.</span>{' '}
         <a

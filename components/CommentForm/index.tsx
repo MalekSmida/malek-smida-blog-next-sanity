@@ -1,14 +1,14 @@
 // node modules
 import { useForm, SubmitHandler } from 'react-hook-form';
-import { useState } from 'react';
 import { yupResolver } from '@hookform/resolvers/yup';
 
 // local files
 import { commentSchema } from '../../utils/validationSchema';
 import { PropsComment } from '../CommentList';
+import useCreateComment from '../../hooks/useCreateComment';
 
 // typing
-interface IFormInput {
+export interface IFormInput {
   _id: string;
   name: string;
   email: string;
@@ -24,30 +24,15 @@ function index({ post }: PropsComment) {
   } = useForm<IFormInput>({
     resolver: yupResolver(commentSchema),
   });
-
-  // state
-  const [submitted, setSubmitted] = useState(false);
-  const [loading, setLoading] = useState(false);
+  // custom hook
+  const { isCreated, isLoading, handleCreateComment } = useCreateComment();
 
   // handle form submit to create new comment
   const onSubmit: SubmitHandler<IFormInput> = (data) => {
-    setLoading(true);
-    fetch('/api/createComment', {
-      method: 'POST',
-      body: JSON.stringify(data),
-    })
-      .then(() => {
-        setSubmitted(true);
-      })
-      .catch(() => {
-        setSubmitted(false);
-      })
-      .finally(() => {
-        setLoading(false);
-      });
+    handleCreateComment(data);
   };
 
-  if (submitted) {
+  if (isCreated) {
     return (
       <div className="my-10 mx-auto flex w-full max-w-2xl flex-col bg-primary-color p-12 text-white">
         <h3 className="mb-3 text-3xl font-bold">
@@ -111,7 +96,7 @@ function index({ post }: PropsComment) {
 
       <input
         type="submit"
-        disabled={loading}
+        disabled={isLoading}
         className="focus:shadow-outline cursor-pointer rounded bg-primary-color py-2 px-4 font-bold text-white shadow transition-colors duration-200 ease-in-out hover:bg-indigo-700 focus:outline-none disabled:bg-indigo-700"
       />
     </form>

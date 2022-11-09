@@ -7,6 +7,7 @@ function BackToTopButton() {
     <div
       onClick={onScrollToTop}
       className="fixed bottom-10 right-10 inline-block cursor-pointer rounded-full border border-primary-color p-3 text-primary-color hover:bg-primary-color hover:text-white focus:outline-none focus:ring active:bg-indigo-500"
+      data-test-id="button-scrollToTop"
     >
       <span className="sr-only"> Back to top </span>
 
