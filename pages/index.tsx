@@ -15,7 +15,7 @@ export default function Home({ posts }: PropsHome) {
       {/* posts */}
       <div
         className="grid grid-cols-1 gap-3 p-6 sm:grid-cols-2 md:gap-6 lg:grid-cols-3"
-        data-test-id="posts-container"
+        data-testid="posts-container"
       >
         {posts.map((post) => (
           <PostComponent post={post} key={post._id} />
