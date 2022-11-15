@@ -14,7 +14,7 @@ function index({ post }: PropsPost) {
     <Link href={`/post/${post.slug.current}`}>
       <div
         className="group cursor-pointer overflow-hidden rounded-lg border"
-        data-test-id="post-card-container"
+        data-testid="post-card-container"
       >
         <img
           className="h-48 w-full object-cover transition-transform duration-200 ease-in-out group-hover:scale-105"

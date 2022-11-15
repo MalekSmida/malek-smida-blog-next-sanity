@@ -29,9 +29,9 @@ describe('Home page', () => {
     });
     it('Should show Banner', () => {
       // Best practice
-      // using data-test-id for test
-      // data-test-id could follow => Where?-What?-Why?
-      elementShouldBeVisible('[data-test-id="banner-container"]');
+      // using data-testid for test
+      // data-testid could follow => Where?-What?-Why?
+      elementShouldBeVisible('[data-testid="banner-container"]');
     });
     it('Should load posts', () => {
       /**
@@ -40,7 +40,7 @@ describe('Home page', () => {
        * you can disable it by adding <it.skip()>
        * check docs: https://docs.cypress.io/guides/core-concepts/writing-and-organizing-tests#Excluding-and-Including-Tests
        */
-      cy.get('[data-test-id="post-card-container"]')
+      cy.get('[data-testid="post-card-container"]')
         .should('have.length.greaterThan', 0)
         .first()
         .should('be.visible');
@@ -57,20 +57,20 @@ describe('Home page', () => {
 
   context('Scroll to top button', () => {
     it('Should show button when scrolling', () => {
-      elementShouldNotExist('[data-test-id="button-scrollToTop"]');
+      elementShouldNotExist('[data-testid="button-scrollToTop"]');
       cy.scrollTo(0, 290);
-      elementShouldNotExist('[data-test-id="button-scrollToTop"]');
+      elementShouldNotExist('[data-testid="button-scrollToTop"]');
 
       // show only when scroll Y > 300
       cy.scrollTo(0, 310);
-      elementShouldBeVisible('[data-test-id="button-scrollToTop"]');
+      elementShouldBeVisible('[data-testid="button-scrollToTop"]');
     });
 
     it('Should scroll back to top when click button', () => {
       cy.scrollTo(0, 310);
-      cy.get('[data-test-id="button-scrollToTop"]').click();
+      cy.get('[data-testid="button-scrollToTop"]').click();
 
-      elementShouldNotExist('[data-test-id="button-scrollToTop"]');
+      elementShouldNotExist('[data-testid="button-scrollToTop"]');
       cy.window().its('scrollY').should('equal', 0);
     });
   });
