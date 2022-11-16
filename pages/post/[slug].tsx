@@ -116,6 +116,6 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     },
     // after 3600s * 24 (1day), nextjs gonna update the old cache version
     // you can put 60s if you need update the SSR rendered version every 1min
-    revalidate: 60,
+    revalidate: 3600,
   };
 };
