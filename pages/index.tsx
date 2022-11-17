@@ -1,6 +1,7 @@
 // local files
 import { Post as PostComponent } from '../components';
 import { Main } from '../containers';
+import { getAllPostsQuery } from '../services/queries';
 import { sanityClient } from '../services/sanity';
 import { Post } from '../typings';
 
@@ -27,20 +28,8 @@ export default function Home({ posts }: PropsHome) {
 
 // server side rendering of home page
 export const getServerSideProps = async () => {
-  const query = `*[_type == "post"]{
-    _id,
-    _createdAt,
-    title,
-    author->{
-      name, 
-      image
-    },
-    description,
-    mainImage,
-    slug
-  }`;
-
-  const posts = await sanityClient.fetch(query);
+  // fetch all posts
+  const posts = await sanityClient.fetch(getAllPostsQuery);
 
   return {
     props: {
