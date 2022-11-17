@@ -10,7 +10,7 @@ interface PropsHome {
   posts: Post[];
 }
 
-export default function Home({ posts }: PropsHome) {
+export default function Home({ posts = [] }: PropsHome) {
   return (
     <Main>
       <div
