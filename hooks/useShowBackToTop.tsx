@@ -1,6 +1,10 @@
 // node modules
 import { useState, useEffect } from 'react';
 
+/**
+ * Custom hook that detect when y scroll is > 300
+ * Using event listener on window scroll
+ */
 function useShowBackToTop() {
   // state
   const [showArrowButton, setShowArrowButton] = useState(false);

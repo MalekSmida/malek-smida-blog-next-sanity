@@ -1,4 +1,4 @@
-export { default as Post } from './Post';
+export { default as PostCard } from './PostCard';
 export { default as BackToTopButton } from './BackToTopButton';
 export { default as CommentList } from './CommentList';
 export { default as CommentForm } from './CommentForm';

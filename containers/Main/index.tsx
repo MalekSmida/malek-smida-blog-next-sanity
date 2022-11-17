@@ -12,7 +12,10 @@ interface PropsMain {
   children?: React.ReactNode;
 }
 
-function index({ children, hideBanner }: PropsMain) {
+/**
+ * Layout container as global design of the app
+ */
+const Main: React.FC<PropsMain> = ({ children, hideBanner }) => {
   // hooks
   const { showArrowButton } = useShowBackToTop();
 
@@ -35,6 +38,6 @@ function index({ children, hideBanner }: PropsMain) {
       {showArrowButton && <BackToTopButton />}
     </div>
   );
-}
+};
 
-export default index;
+export default Main;
