@@ -1,7 +1,12 @@
 // local files
-import hyperlinks from '../../utils/hyperlinks';
+import { hyperlinks } from '../../utils/contants';
 
-function index() {
+/**
+ * Footer component
+ *
+ * @type {React.FC}
+ */
+function Footer() {
   return (
     <footer
       className="flex h-20 w-full items-center justify-center border-t"
@@ -24,4 +29,4 @@ function index() {
   );
 }
 
-export default index;
+export default Footer;

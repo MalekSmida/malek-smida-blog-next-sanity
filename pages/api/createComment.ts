@@ -1,7 +1,12 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
+// node modules
 import type { NextApiRequest, NextApiResponse } from 'next';
 import sanityClient from '@sanity/client';
 
+// local files
+import { feedbackMessages } from '../../utils/contants';
+
+// Sanity instance
 const config = {
   dataset: process.env.NEXT_PUBLIC_SANITY_DATASET || 'production',
   projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID,
@@ -9,9 +14,9 @@ const config = {
   token: process.env.SANITY_API_TOKEN,
   apiVersion: '2021-03-25',
 };
-
 const client = sanityClient(config);
 
+// service
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
@@ -31,8 +36,10 @@ export default async function handler(
       comment,
     });
   } catch (error) {
-    return res.status(500).json({ message: 'Failed to submit comment', error });
+    return res
+      .status(500)
+      .json({ message: feedbackMessages.FAILED_COMMENT, error });
   }
 
-  res.status(201).json({ message: 'Comment submitted' });
+  res.status(201).json({ message: feedbackMessages.SUCCESS_COMMENT });
 }

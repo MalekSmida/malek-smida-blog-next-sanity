@@ -1,4 +1,4 @@
-import hyperlinks from '../../utils/hyperlinks';
+import { hyperlinks } from '../../utils/contants';
 
 /**
  * Test and assert that selected element is in the DOM and Visible

@@ -4,6 +4,10 @@ import { useState } from 'react';
 // local files
 import { IFormInput } from '../components/CommentForm';
 
+/**
+ * Custom hook that handle create comment service
+ * With laoding feature
+ */
 function useCreateComment() {
   // state
   const [isCreated, setIsCreated] = useState(false);

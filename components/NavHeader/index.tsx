@@ -1,10 +1,9 @@
 // node modules
-import { FC } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 
 // local files
-import hyperlinks from '../../utils/hyperlinks';
+import { hyperlinks } from '../../utils/contants';
 import navList from '../../data/navList';
 
 export interface NavButtonProps {
@@ -13,12 +12,17 @@ export interface NavButtonProps {
   pageLink: string;
 }
 
+/**
+ * Navigation bar at the top of page
+ *
+ * @type {React.FC}
+ */
 function NavHeader() {
   // hooks
   const currentRoute = useRouter();
 
   // components
-  const NavButton: FC<NavButtonProps> = ({ title, pageLink }) => (
+  const NavButton: React.FC<NavButtonProps> = ({ title, pageLink }) => (
     <li>
       <Link href={pageLink}>
         {currentRoute.pathname === pageLink ? (
@@ -59,7 +63,7 @@ function NavHeader() {
             <a
               href={hyperlinks.Portfolio}
               target="_blank"
-              rel="noopener noreferrer"
+              rel="noopener noreferrer" // security
               title="Wanderer blog"
             >
               <span className="relative cursor-pointer select-none text-sm font-medium text-gray-500 transition-colors duration-300 ease-in-out before:absolute before:-bottom-1 before:h-0.5 before:w-full before:origin-left before:scale-x-0 before:bg-primary-color before:transition hover:text-primary-color hover:before:scale-100">

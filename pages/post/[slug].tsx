@@ -7,7 +7,11 @@ import { Main } from '../../containers';
 import { sanityClient, urlFor } from '../../services/sanity';
 import { Post } from '../../typings';
 import { CommentForm, CommentList } from '../../components';
-import hyperlinks from '../../utils/hyperlinks';
+import { hyperlinks } from '../../utils/contants';
+import {
+  getAllSlugsOfPostsQuery,
+  getPostBySlugQuery,
+} from '../../services/queries';
 
 // typing
 interface PropsPost {
@@ -60,14 +64,7 @@ export default Post;
 
 export const getStaticPaths = async () => {
   // get all slugs of posts
-  const query = `*[_type == "post"]{
-    _id,
-    slug{
-      current
-    }
-  }`;
-
-  const posts = await sanityClient.fetch(query);
+  const posts = await sanityClient.fetch(getAllSlugsOfPostsQuery);
 
   // prepare available paths
   const paths = posts.map((post: Post) => ({
@@ -84,26 +81,7 @@ export const getStaticPaths = async () => {
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   // fetch post with slug in param
-  const query = `*[_type == "post" && slug.current == $slug][0]{
-    _id,
-    _createdAt,
-    title,
-    author -> {
-      name,
-      image
-    },
-    'comments': *[
-      _type == 'comment' && 
-      post._ref == ^._id &&
-      approved == true
-    ],
-    description,
-    mainImage,
-    slug,
-    body
-  }`;
-
-  const post = await sanityClient.fetch(query, {
+  const post = await sanityClient.fetch(getPostBySlugQuery, {
     slug: params?.slug,
   });
 
