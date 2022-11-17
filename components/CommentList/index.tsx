@@ -5,7 +5,10 @@ export interface PropsComment {
   post: Post;
 }
 
-function index({ post }: PropsComment) {
+/**
+ * Shows list of comments at the end of post page
+ */
+const CommentList: React.FC<PropsComment> = ({ post }) => {
   return (
     <div className="mx-auto mb-10 flex w-full max-w-2xl flex-col space-y-2 bg-gray-100 p-12">
       <h3 className="text-3xl">Comments</h3>
@@ -23,6 +26,6 @@ function index({ post }: PropsComment) {
       ))}
     </div>
   );
-}
+};
 
-export default index;
+export default CommentList;

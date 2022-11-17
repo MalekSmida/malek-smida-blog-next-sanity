@@ -7,7 +7,7 @@ import { Main } from '../../containers';
 import { sanityClient, urlFor } from '../../services/sanity';
 import { Post } from '../../typings';
 import { CommentForm, CommentList } from '../../components';
-import hyperlinks from '../../utils/hyperlinks';
+import { hyperlinks } from '../../utils/contants';
 import {
   getAllSlugsOfPostsQuery,
   getPostBySlugQuery,

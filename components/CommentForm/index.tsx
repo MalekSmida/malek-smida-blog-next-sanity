@@ -15,7 +15,14 @@ export interface IFormInput {
   comment: string;
 }
 
-function index({ post }: PropsComment) {
+interface PropsErrorMessage {
+  field: string;
+}
+
+/**
+ * Comment form by the end of Post page
+ */
+const CommentForm: React.FC<PropsComment> = ({ post }) => {
   // hooks
   const {
     register,
@@ -42,6 +49,13 @@ function index({ post }: PropsComment) {
       </div>
     );
   }
+
+  /**
+   * Error message text
+   */
+  const ErrorMessage: React.FC<PropsErrorMessage> = ({ field }) => (
+    <span className="text-red-500">▪️ The {field} Field is invalid</span>
+  );
 
   return (
     <form
@@ -83,15 +97,9 @@ function index({ post }: PropsComment) {
 
       {/* handle error messages */}
       <div className="flex flex-col p-5">
-        {errors.name && (
-          <span className="text-red-500">▪️ The Name Field is invalid</span>
-        )}
-        {errors.email && (
-          <span className="text-red-500">▪️ The Email Field is invalid</span>
-        )}
-        {errors.comment && (
-          <span className="text-red-500">▪️ The Comment Field is invalid</span>
-        )}
+        {errors.name && <ErrorMessage field="Name" />}
+        {errors.email && <ErrorMessage field="Email" />}
+        {errors.comment && <ErrorMessage field="Comment" />}
       </div>
 
       <input
@@ -101,6 +109,6 @@ function index({ post }: PropsComment) {
       />
     </form>
   );
-}
+};
 
-export default index;
+export default CommentForm;

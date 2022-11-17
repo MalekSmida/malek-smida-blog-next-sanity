@@ -1,4 +1,11 @@
+/**
+ * Button handle scroll back to position y=0
+ * It shows when we scroll  to position y > 300
+ *
+ * @type {React.FC}
+ */
 function BackToTopButton() {
+  // events
   const onScrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };

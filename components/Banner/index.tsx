@@ -1,4 +1,9 @@
-function index() {
+/**
+ * Banner shown in home screen
+ *
+ * @type {React.FC}
+ */
+function Banner() {
   return (
     <>
       <div
@@ -23,4 +28,4 @@ function index() {
   );
 }
 
-export default index;
+export default Banner;

@@ -1,9 +1,15 @@
 // local files
 import { Main } from '../../containers';
 import aboutList from '../../data/aboutBlogList';
-import hyperlinks from '../../utils/hyperlinks';
+import { hyperlinks } from '../../utils/contants';
 
-function index() {
+/**
+ * About page
+ * In this page you can develop a description of "what your blog is about?"
+ *
+ * @type {React.FC}
+ */
+function About() {
   return (
     <Main>
       <div className="mx-auto my-10 flex w-full max-w-3xl items-center">
@@ -51,4 +57,4 @@ function index() {
   );
 }
 
-export default index;
+export default About;
