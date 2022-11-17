@@ -1,6 +1,7 @@
 // node modules
 import { GetStaticProps } from 'next/types';
 import { PortableText } from '@portabletext/react';
+import Image from 'next/image';
 
 // local files
 import { Main } from '../../containers';
@@ -21,20 +22,26 @@ interface PropsPost {
 function Post({ post }: PropsPost) {
   return (
     <Main hideBanner>
-      <img
-        src={urlFor(post.mainImage).url()!}
-        alt={post.title}
-        className="h-48 w-full object-cover"
-      />
+      <div className="relative h-48 w-full object-cover">
+        <Image
+          src={urlFor(post.mainImage).url()!}
+          alt={post.title}
+          layout="fill"
+          objectFit="cover"
+        />
+      </div>
       <article className="mx-auto max-w-3xl p-5">
         <h1 className="mb-2 mt-5 text-3xl font-semibold">{post.title}</h1>
         <h2 className="text-xl font-light text-gray-500">{post.description}</h2>
         <div className="mt-7 flex items-center">
-          <img
-            className="mr-2 h-10 w-10 rounded-full"
-            src={urlFor(post.author.image).url()!}
-            alt={post.author.name}
-          />
+          <div className="relative mr-2 h-10 w-10 overflow-hidden rounded-full">
+            <Image
+              src={urlFor(post.author.image).url()!}
+              alt={post.author.name}
+              layout="fill"
+              objectFit="cover"
+            />
+          </div>
           <div className="flex flex-col">
             <a
               target="_blank"
