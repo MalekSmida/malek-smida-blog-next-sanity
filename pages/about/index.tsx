@@ -1,3 +1,6 @@
+// node modules
+import Image from 'next/image';
+
 // local files
 import { Main } from '../../containers';
 import aboutList from '../../data/aboutBlogList';
@@ -13,11 +16,14 @@ function About() {
   return (
     <Main>
       <div className="mx-auto my-10 flex w-full max-w-3xl items-center">
-        <img
-          className="mr-3 w-44 rounded-md border-4 object-contain"
-          src="https://res.cloudinary.com/deebb8zh7/image/upload/v1664017465/Malek_Smida_thumbnail_usjhwc.jpg"
-          alt="Malek Smida"
-        />
+        <div className="relative mr-3 h-44 w-44 rounded-md border-4 object-contain">
+          <Image
+            layout="fill"
+            objectFit="cover"
+            src="https://res.cloudinary.com/deebb8zh7/image/upload/v1664017465/Malek_Smida_thumbnail_usjhwc.jpg"
+            alt="Malek Smida"
+          />
+        </div>
         <div>
           <p className="mb-1 text-xl font-bold text-dark-color">Malek Smida</p>
           <p className="text-md mb-1 text-gray-500">Founder</p>

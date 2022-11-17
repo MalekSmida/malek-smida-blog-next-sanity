@@ -1,5 +1,6 @@
 // node modules
 import Link from 'next/link';
+import Image from 'next/image';
 
 // local files
 import { Post } from '../../typings';
@@ -19,11 +20,14 @@ const PostCard: React.FC<PropsPost> = ({ post }) => {
         className="group cursor-pointer overflow-hidden rounded-lg border"
         data-testid="post-card-container"
       >
-        <img
-          className="h-48 w-full object-cover transition-transform duration-200 ease-in-out group-hover:scale-105"
-          src={urlFor(post.mainImage).url()!}
-          alt={post.slug.current}
-        />
+        <div className="relative h-48 w-full object-cover transition-transform duration-200 ease-in-out group-hover:scale-105">
+          <Image
+            src={urlFor(post.mainImage).url()!}
+            alt={post.slug.current}
+            layout="fill"
+            objectFit="cover"
+          />
+        </div>
         <div className="flex justify-between bg-white p-5">
           <div>
             <p className="mb-1 text-lg font-bold text-dark-color">

@@ -1,3 +1,6 @@
+// node modules
+import Image from 'next/image';
+
 /**
  * Banner shown in home screen
  *
@@ -17,11 +20,14 @@ function Banner() {
             child -Anthony De Mello
           </h1>
         </div>
-        <img
-          src="/moment-to-relax.svg"
-          alt="relax Logo"
-          className="ml-2 hidden h-52 md:inline-flex"
-        />
+        <div className="ml-2 hidden md:inline-flex">
+          <Image
+            src="/moment-to-relax.svg"
+            alt="relax Logo"
+            width={275}
+            height={208} // alternative to h-52 in tailwindcss
+          />
+        </div>
       </div>
       <hr className="mx-auto w-full border border-gray-200" />
     </>
