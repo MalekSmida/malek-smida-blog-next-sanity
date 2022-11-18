@@ -4,5 +4,4 @@ module.exports = {
   tabWidth: 2,
   tailwindConfig: './tailwind.config.js',
   semi: true,
-  printWidth: 100,
 };
