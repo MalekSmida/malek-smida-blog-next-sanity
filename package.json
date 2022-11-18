@@ -5,6 +5,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "format": "prettier --write \"**/*.+(js|jsx|json|css|md)\"",
     "cypress:open": "cypress open",
     "cypress:open:mobile": "cypress open --config viewportWidth=414,viewportHeight=896",
     "e2e": "cypress run --config viewportWidth=1080,viewportHeight=1920"
