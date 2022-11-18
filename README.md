@@ -28,7 +28,7 @@ SANITY_API_TOKEN=
 3- open sanityblog folder\
 
 ```bash
-$ cd sanityblog
+cd sanityblog
 ```
 
 4- Run `$ npm install` to add the dependencies\
