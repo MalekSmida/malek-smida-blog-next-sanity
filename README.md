@@ -10,14 +10,14 @@ Preview live [Wanderer Bolg](https://www.maleksmida.blog/):
 
 ## How to use
 
-1- Download or clone the project <br />
-2- Run `$ npm install` to add the dependencies <br />
-3- Run the project locally `$ npm run dev` <br />
+1- Download or clone the project\
+2- Run `$ npm install` to add the dependencies\
+3- Run the project locally `$ npm run dev`\
 
 In order to use Sanity CMS follow this steps:
 
-1- Create project in [Sanity](https://www.sanity.io/) <br />
-2- Create `.env.local` and add this variables <br />
+1- Create project in [Sanity](https://www.sanity.io/)\
+2- Create `.env.local` and add this variables\
 
 ```bash
 NEXT_PUBLIC_SANITY_DATASET=
@@ -25,14 +25,14 @@ NEXT_PUBLIC_SANITY_PROJECT_ID=
 SANITY_API_TOKEN=
 ```
 
-3- open sanityblog folder <br />
+3- open sanityblog folder\
 
 ```bash
 $ cd sanityblog
 ```
 
-4- Run `$ npm install` to add the dependencies <br />
-5- Run Sanity dashboard locally `$ sanity start` <br />
+4- Run `$ npm install` to add the dependencies\
+5- Run Sanity dashboard locally `$ sanity start`\
 
 ## Available scripts
 
@@ -50,11 +50,13 @@ It correctly bundles Next in production mode and optimizes the build for the bes
 
 ### `npm run cypress:open`
 
-It will opens Cypress window so that you can interact directly with tests. Check [Cypress docs](https://docs.cypress.io/guides/guides/command-line#cypress-open) for more details
+It will opens Cypress window so that you can interact directly with tests.\Check [Cypress docs](https://docs.cypress.io/guides/guides/command-line#cypress-open) for more details
 
 ### `npm run e2e`
 
-It run e2e tests by Cypress. This script could be included in your CI pipeline. Check [Cypress docs](https://docs.cypress.io/guides/guides/command-line#cypress-run) for more details
+It run e2e tests by Cypress.\
+This script could be included in your CI pipeline.\
+Check [Cypress docs](https://docs.cypress.io/guides/guides/command-line#cypress-run) for more details
 
 ### `npm run lint`
 
