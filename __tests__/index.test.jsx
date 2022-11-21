@@ -1,16 +1,20 @@
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
-import * as nextRouter from 'next/router';
 
 // local files
 import Home from '../pages/index';
-
-// Next router mock
-nextRouter.useRouter = jest.fn();
-nextRouter.useRouter.mockImplementation(() => ({ route: '/' }));
+import { mockNextUseRouter } from '../__mocks__/useRouter';
 
 describe('Home', () => {
   it('renders a heading', () => {
+    // Mocks Next.js route
+    mockNextUseRouter({
+      route: '/',
+      pathname: '/',
+      query: '',
+      asPath: '',
+    });
+
     render(<Home />);
 
     const heading = screen.getByRole('heading', {
