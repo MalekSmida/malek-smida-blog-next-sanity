@@ -58,6 +58,9 @@ module.exports = {
     defaultLocale: 'en',
   },
   productionBrowserSourceMaps: true,
+  images: {
+    domains: ['cdn.sanity.io', 'res.cloudinary.com'],
+  },
   async headers() {
     return [
       {

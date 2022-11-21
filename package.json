@@ -5,6 +5,8 @@
     "build": "next build",
     "start": "next start",
     "test": "jest",
+    "lint": "next lint",
+    "format": "prettier --write --ignore-path .gitignore .",
     "cypress:open": "cypress open",
     "cypress:open:mobile": "cypress open --config viewportWidth=414,viewportHeight=896",
     "e2e": "cypress run --config viewportWidth=1080,viewportHeight=1920"
@@ -32,6 +34,8 @@
     "identity-obj-proxy": "^3.0.0",
     "jest": "^29.3.1",
     "jest-environment-jsdom": "^29.3.1",
+    "eslint": "8.27.0",
+    "eslint-config-next": "13.0.3",
     "postcss": "^8.4.5",
     "prettier": "^2.5.1",
     "prettier-plugin-tailwindcss": "^0.1.1",

@@ -4,20 +4,20 @@ This example shows how to use [Next.js](https://nextjs.org/) [(v12)](https://nex
 
 ## Preview
 
-Preview live => [Wanderer Bolg](https://www.maleksmida.blog/):
+Preview live [Wanderer Bolg](https://www.maleksmida.blog/):
 
-[![image](https://user-images.githubusercontent.com/58492485/185740638-32885d95-d167-44a0-b772-45dc343e5c46.png)](https://www.maleksmida.blog/)
+[![image](https://res.cloudinary.com/deebb8zh7/image/upload/c_pad,b_auto:predominant,fl_preserve_transparency/v1668759856/malek_smida_blog_wjewmq.jpg)](https://www.maleksmida.blog/)
 
 ## How to use
 
-1- Download or clone the project <br />
-2- Run `$ npm install` to add the dependencies <br />
-3- Run the project locally `$ npm run dev` <br />
+1- Download or clone the project\
+2- Run `$ npm install` to add the dependencies\
+3- Run the project locally `$ npm run dev`\
 
 In order to use Sanity CMS follow this steps:
 
-1- Create project in [Sanity](https://www.sanity.io/) <br />
-2- Create `.env.local` and add this variables <br />
+1- Create project in [Sanity](https://www.sanity.io/)\
+2- Create `.env.local` and add this variables\
 
 ```bash
 NEXT_PUBLIC_SANITY_DATASET=
@@ -25,16 +25,48 @@ NEXT_PUBLIC_SANITY_PROJECT_ID=
 SANITY_API_TOKEN=
 ```
 
-3- open sanityblog folder <br />
+3- open sanityblog folder\
 
 ```bash
-$ cd sanityblog
+cd sanityblog
 ```
 
-4- Run `$ npm install` to add the dependencies <br />
-5- Run Sanity dashboard locally `$ sanity start` <br />
+4- Run `$ npm install` to add the dependencies\
+5- Run Sanity dashboard locally `$ sanity start`\
 
-## How to use
+## Available scripts
+
+In the project directory, you can run:
+
+### `npm run dev`
+
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+
+### `npm run build`
+
+Builds the app for production to the `.next` folder.\
+It correctly bundles Next in production mode and optimizes the build for the best performance.
+
+### `npm run cypress:open`
+
+It will opens Cypress window so that you can interact directly with tests.\Check [Cypress docs](https://docs.cypress.io/guides/guides/command-line#cypress-open) for more details
+
+### `npm run e2e`
+
+It run e2e tests by Cypress.\
+This script could be included in your CI pipeline.\
+Check [Cypress docs](https://docs.cypress.io/guides/guides/command-line#cypress-run) for more details
+
+### `npm run lint`
+
+Run ESLint to statically analyse your code
+
+### `npm run format`
+
+Run Prettier to manually format your entire code
+
+## How to deploy
 
 ### Next.js App
 
