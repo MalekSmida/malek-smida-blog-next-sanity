@@ -6,7 +6,7 @@ import Home from '../pages/index';
 import { mockNextUseRouter } from '../__mocks__/useRouter';
 
 describe('Home', () => {
-  it('renders a heading', () => {
+  it('Should renders home page', () => {
     // Mocks Next.js route
     mockNextUseRouter({
       route: '/',
